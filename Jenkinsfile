@@ -11,9 +11,9 @@ pipeline {
       steps {
         script {
           sh '''
-            sudo docker version
-            sudo docker build -t ealebed/hellonode:latest .
-            sudo docker image ls
+            docker version
+            docker build -t sham1361/hellonode:latest .
+            docker image ls
           '''
         }
       }
