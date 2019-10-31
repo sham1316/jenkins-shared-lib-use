@@ -9,12 +9,17 @@ pipeline {
         checkout scm
       }
     }
+    stage('Get Dockerfile') {
+      steps {
+        createDockerfile()
+      }
+    }
     stage('Build') {
-	  steps {
+      steps {
         dockerCmd 'version'
         dockerCmd 'build -t ealebed/hellonode:latest .'
         dockerCmd 'image ls'
-      } 
+      }
     }
   }
 }
