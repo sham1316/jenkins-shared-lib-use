@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        dockerCmd 'version'
+        dockerCmd('version', 'yes')
         dockerCmd 'build -t ealebed/hellonode:latest .'
         dockerCmd 'image ls'
       }
